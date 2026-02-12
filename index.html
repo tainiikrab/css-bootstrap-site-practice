@@ -7,92 +7,9 @@
     <title>LudoLibrary</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        html {
-            scroll-padding-top: 80px;
-        }
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
 
-        :root {
-            --brand: #ff6b00;
-        }
-
-        .nav-brand {
-            font-weight: 700;
-            letter-spacing: .4px;
-            display: flex;
-            align-items: center;
-        }
-
-        .brand-logo {
-            height: 28px;
-            width: auto;
-        }
-
-        .hero {
-            background:
-                radial-gradient(circle at 30% 30%, rgba(255, 107, 0, .25), transparent 40%),
-                linear-gradient(180deg, #0f1724 0%, #122034 100%);
-
-            padding-top: 7rem;
-            padding-bottom: 6rem;
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-
-        .game-card {
-            cursor: pointer;
-            transition: transform .15s ease, box-shadow .15s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
-        }
-
-        .game-card:focus,
-        .game-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(2, 6, 23, .3);
-            outline: none;
-        }
-
-
-        .game-thumb {
-            height: 160px;
-            object-fit: cover;
-            width: 100%;
-            border-radius: .25rem;
-        }
-
-        .footer {
-            background: #0b1220;
-            color: #9aa4b2;
-            padding: 2rem 0;
-        }
-
-        @media (max-width:767px) {
-            .hero .hero-img {
-                display: none;
-            }
-        }
-
-        .modal-fullscreen-sm-down {
-            --bs-modal-width: 100%;
-        }
-
-        .game-frame {
-            width: 100%;
-            height: 70vh;
-            border: 0;
-        }
-
-        .btn-brand {
-            background: var(--brand);
-            color: #fff;
-        }
-
-        .btn-brand:hover {
-            background: #e85f00;
-            color: #fff;
-        }
-    </style>
 </head>
 
 <body class="bg-light">
@@ -106,13 +23,20 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Показать навигацию">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="nav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#games">Игры</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
-                    <li class="nav-item"><a class="btn btn-sm btn-outline-primary ms-2" href="#contact">Контакты</a></li>
-                </ul>
-            </div>
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+
+
+        </div>
         </div>
     </nav>
 
@@ -139,18 +63,18 @@
             <div class="row g-4">
 
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <article class="p-3 bg-white rounded game-card" tabindex="0" role="button" data-game-title="Challenger City Driver" data-game-src="https://html5.gamedistribution.com/f38d251c8d8a4477aabde9953d8ac971/">
-                        <img class="game-thumb mb-3" src="https://img.gamedistribution.com/f38d251c8d8a4477aabde9953d8ac971-512x512.jpg" alt="Driver">
-                        <h3 class="h6 mb-1">Challenger City Driver</h3>
-                        <p class="text-muted small mb-0">Стань лучшим водителем в городе!</p>
-                    </article>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
                     <article class="p-3 bg-white rounded game-card" tabindex="0" role="button" data-game-title="Checkers" data-game-src="https://playpager.com/embed/checkers/index.html">
                         <img class="game-thumb mb-3" src="https://avatars.mds.yandex.net/get-vh/3245183/2a00000195ebab8c4c21895c8b04f951b91f/564x318_1" alt="Checkers">
                         <h3 class="h6 mb-1">Checkers</h3>
                         <p class="text-muted small mb-0">Шашки в браузере.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="p-3 bg-white rounded game-card" tabindex="0" role="button" data-game-title="Challenger City Driver" data-game-src="https://html5.gamedistribution.com/f38d251c8d8a4477aabde9953d8ac971/">
+                        <img class="game-thumb mb-3" src="https://img.gamedistribution.com/f38d251c8d8a4477aabde9953d8ac971-512x512.jpg" alt="Driver">
+                        <h3 class="h6 mb-1">Challenger City Driver</h3>
+                        <p class="text-muted small mb-0">Стань лучшим водителем в городе!</p>
                     </article>
                 </div>
 
@@ -234,9 +158,17 @@
                     <h5 class="modal-title" id="gameModalLabel">Игра</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
-                <div class="modal-body p-0">
-                    <iframe class="game-frame" id="gameFrame" src="" title="Игровой фрейм" allow="fullscreen"></iframe>
+                <div class="modal-body p-0 position-relative">
+
+                    <div id="gameLoader" class="game-loader d-flex justify-content-center align-items-center">
+                        <div class="spinner-border text-light" role="status"></div>
+                    </div>
+
+                    <iframe class="game-frame" id="gameFrame" src="" title="Игровой фрейм" allow="fullscreen">
+                    </iframe>
+
                 </div>
+
                 <div class="modal-footer">
                     <a id="openNewTab" class="btn btn-outline-primary" target="_blank" rel="noopener">Открыть в новой вкладке</a>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
@@ -249,17 +181,28 @@
     <script>
         const modalEl = document.getElementById('gameModal');
         const gameFrame = document.getElementById('gameFrame');
+        const loader = document.getElementById('gameLoader');
         const modal = new bootstrap.Modal(modalEl);
         const modalTitle = document.getElementById('gameModalLabel');
         const openNewTab = document.getElementById('openNewTab');
 
         function openGame(src, title) {
             modalTitle.textContent = title;
+            loader.classList.remove("hidden");
             gameFrame.src = src;
             openNewTab.href = src;
             modal.show();
             setTimeout(() => gameFrame.focus(), 300);
         }
+        gameFrame.addEventListener("load", function() {
+            loader.classList.add("hidden");
+        });
+
+        modalEl.addEventListener('hidden.bs.modal', () => {
+            gameFrame.src = '';
+            loader.classList.remove("hidden");
+        });
+
 
         modalEl.addEventListener('hidden.bs.modal', () => {
             gameFrame.src = '';
