@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LudoLibrary</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-padding-top: 80px;
+        }
+
+        :root {
+            --brand: #ff6b00;
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            letter-spacing: .4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-logo {
+            height: 28px;
+            width: auto;
+        }
+
+        .hero {
+            background:
+                radial-gradient(circle at 30% 30%, rgba(255, 107, 0, .25), transparent 40%),
+                linear-gradient(180deg, #0f1724 0%, #122034 100%);
+
+            padding-top: 7rem;
+            padding-bottom: 6rem;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+
+        .game-card {
+            cursor: pointer;
+            transition: transform .15s ease, box-shadow .15s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
+        }
+
+        .game-card:focus,
+        .game-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(2, 6, 23, .3);
+            outline: none;
+        }
+
+
+        .game-thumb {
+            height: 160px;
+            object-fit: cover;
+            width: 100%;
+            border-radius: .25rem;
+        }
+
+        .footer {
+            background: #0b1220;
+            color: #9aa4b2;
+            padding: 2rem 0;
+        }
+
+        @media (max-width:767px) {
+            .hero .hero-img {
+                display: none;
+            }
+        }
+
+        .modal-fullscreen-sm-down {
+            --bs-modal-width: 100%;
+        }
+
+        .game-frame {
+            width: 100%;
+            height: 70vh;
+            border: 0;
+        }
+
+        .btn-brand {
+            background: var(--brand);
+            color: #fff;
+        }
+
+        .btn-brand:hover {
+            background: #e85f00;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
+        <div class="container">
+            <a class="navbar-brand nav-brand d-flex align-items-center gap-2" href="#">
+                <img src="assets/logo.png" alt="LudoLibrary logo" class="brand-logo">
+                <span>Ludo<span class="text-dark">Library</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Показать навигацию">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#games">Игры</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
+                    <li class="nav-item"><a class="btn btn-sm btn-outline-primary ms-2" href="#contact">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero pt-5 pb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-white">
+                    <h1 class="display-5 fw-bold">Бесплатные веб-игры <br>прямо в браузере</h1>
+                    <p class="lead">Классика и новинки: запускай в оверлее или открывай в новой вкладке. <br>Подходит для desktop и mobile.</p>
+                    <div class="mt-4">
+                        <a href="#games" class="btn btn-lg btn-brand">Играть</a>
+                        <a href="#about" class="btn btn-lg btn-outline-light ms-2">О проекте</a>
+                    </div>
+                </div>
+                <div class="col-md-5 hero-img text-center">
+                    <img src="assets/hero_image.png" alt="Игры" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="games" class="games-section">
+        <div class="container games-container">
+            <div class="row g-4">
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="p-3 bg-white rounded game-card" tabindex="0" role="button" data-game-title="Challenger City Driver" data-game-src="https://html5.gamedistribution.com/f38d251c8d8a4477aabde9953d8ac971/">
+                        <img class="game-thumb mb-3" src="https://img.gamedistribution.com/f38d251c8d8a4477aabde9953d8ac971-512x512.jpg" alt="Driver">
+                        <h3 class="h6 mb-1">Challenger City Driver</h3>
+                        <p class="text-muted small mb-0">Стань лучшим водителем в городе!</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="p-3 bg-white rounded game-card" tabindex="0" role="button" data-game-title="Checkers" data-game-src="https://playpager.com/embed/checkers/index.html">
+                        <img class="game-thumb mb-3" src="https://avatars.mds.yandex.net/get-vh/3245183/2a00000195ebab8c4c21895c8b04f951b91f/564x318_1" alt="Checkers">
+                        <h3 class="h6 mb-1">Checkers</h3>
+                        <p class="text-muted small mb-0">Шашки в браузере.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="p-3 bg-white rounded game-card" tabindex="0" role="button" data-game-title="Reversi" data-game-src="https://playpager.com/embed/reversi/index.html">
+                        <img class="game-thumb mb-3" src="https://avatars.mds.yandex.net/get-games/1881957/2a0000017b5b49936e4a7a2bdbe370cd603c/default526x314" alt="Reversi">
+                        <h3 class="h6 mb-1">Reversi</h3>
+                        <p class="text-muted small mb-0">Захвати больше фишек, чем соперник.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="p-3 bg-white rounded game-card" tabindex="0" role="button" data-game-title="Solitaire" data-game-src="https://playpager.com/embed/solitaire/index.html">
+                        <img class="game-thumb mb-3" src="https://avatars.mds.yandex.net/get-games/17782796/2a0000019a54b457b9c26003ec2d5abc671b/pjpg928x522" alt="Solitaire">
+                        <h3 class="h6 mb-1">Solitaire</h3>
+                        <p class="text-muted small mb-0">Классический пасьянс.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="p-3 bg-white rounded game-card" tabindex="0" role="button" data-game-title="Sudoku" data-game-src="https://playpager.com/embed/sudoku/index.html">
+                        <img class="game-thumb mb-3" src="https://avatars.mds.yandex.net/i?id=1c547424156b8326c05afbe00f639405_l-4842027-images-thumbs&n=13" alt="Sudoku">
+                        <h3 class="h6 mb-1">Sudoku</h3>
+                        <p class="text-muted small mb-0">Заполни поле без повторений.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <article class="p-3 bg-white rounded game-card" tabindex="0" role="button" data-game-title="Falling Cubes" data-game-src="https://playpager.com/embed/cubes/index.html">
+                        <img class="game-thumb mb-3" src="https://avatars.mds.yandex.net/get-games/1881371/2a0000017aa571bb009c6aaa29f3bc1b659a/default526x314" alt="Falling Cubes">
+                        <h3 class="h6 mb-1">Falling Cubes</h3>
+                        <p class="text-muted small mb-0">Аркадная игра на реакцию.</p>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <section class="py-5 bg-white" id="about">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <h3>О LudoLibrary</h3>
+                    <p class="text-muted">
+                        LudoLibrary — библиотека бесплатных браузерных игр. Просто выберите игру и начните играть, быстро и без лишних действий.
+                    </p>
+                    <ul>
+                        <li>Быстрый старт без регистрации</li>
+                        <li>Чистый и понятный интерфейс</li>
+                        <li>Работает на любых устройствах</li>
+                        <li>Игры открываются прямо на странице</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 d-flex justify-content-right">
+                    <img src="assets/bottom_image.png" alt="Иллюстрация" class="img-fluid rounded mx-auto d-block">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>LudoLibrary</strong><br>
+                    Площадка для запуска бесплатных веб-игр.
+                </div>
+                <div class="col-md-6 text-md-end" id="contact">
+                    <small>Контакты: <a href="https://github.com/tainiikrab" class="text-decoration-none" target="_blank">GitHub</a></small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="gameModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="gameModalLabel">Игра</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe class="game-frame" id="gameFrame" src="" title="Игровой фрейм" allow="fullscreen"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <a id="openNewTab" class="btn btn-outline-primary" target="_blank" rel="noopener">Открыть в новой вкладке</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const modalEl = document.getElementById('gameModal');
+        const gameFrame = document.getElementById('gameFrame');
+        const modal = new bootstrap.Modal(modalEl);
+        const modalTitle = document.getElementById('gameModalLabel');
+        const openNewTab = document.getElementById('openNewTab');
+
+        function openGame(src, title) {
+            modalTitle.textContent = title;
+            gameFrame.src = src;
+            openNewTab.href = src;
+            modal.show();
+            setTimeout(() => gameFrame.focus(), 300);
+        }
+
+        modalEl.addEventListener('hidden.bs.modal', () => {
+            gameFrame.src = '';
+        });
+
+        document.querySelectorAll('.game-card').forEach(card => {
+            const src = card.getAttribute('data-game-src');
+            const title = card.getAttribute('data-game-title') || 'Игра';
+            card.addEventListener('click', () => openGame(src, title));
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openGame(src, title);
+                }
+            });
+        });
+
+        gameFrame.addEventListener('error', () => {
+            if (openNewTab.href) window.open(openNewTab.href, '_blank', 'noopener');
+        });
+    </script>
+</body>
+
+</html>
